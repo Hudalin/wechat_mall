@@ -1,0 +1,137 @@
+/* pages/home/home.wxss */
+
+page {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+}
+
+.navbar {
+  flex: none;
+  display: flex;
+  background: #fff;
+  height: 90rpx;
+}
+
+.navbar .item {
+  position: relative;
+  flex: auto;
+  text-align: center;
+  line-height: 80rpx;
+  font-size: 14px;
+}
+
+/* 顶部导航字体颜色 */
+
+.navbar .item.active {
+  color: #f0145a;
+}
+
+/* 顶部指示条属性 */
+.navbar .item.active:after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 6rpx;
+  background: #f0145a;
+}
+
+/* 直接设置swiper属性 */
+swiper {
+  height: 300rpx;
+}
+
+swiper-item image {
+  width: 100%;
+  height: 100%;
+}
+
+.cutLine {
+  padding: 5px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.hg_container {
+  height: 360rpx;
+  margin-top: 20px;
+}
+
+.hg_title {
+  box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
+  color: #f0145a;
+}
+
+.gooditem {
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+}
+
+.imgview {
+  /*flex: 1;*/
+  border: 1px solid #ddd;
+  text-align: center;
+  width:33.33%;
+}
+
+.imgview image {
+  width: 100%;
+  height: 250rpx;
+  border: 1px solid #eee;
+}
+
+.gray_font {
+  color: #f0145a;
+}
+
+.placeholder {
+  margin: 10px 0;
+  height: 30px;
+}
+
+.hot-container {
+  margin-top: 10px;
+  background: #eee;
+}
+
+.hot-title {
+  padding: 10px;
+  font-size: 16px;
+  color: #f55030;
+  background: #fff;
+}
+
+.hot-imgview {
+  margin-top: 10px;
+}
+
+.hot-imgview image {
+  width: 100%;
+  height: 280rpx;
+}
+
+
+/*footer*/
+.footer{
+   text-align: center;
+    height: 200rpx;
+}
+
+.footer view{
+    width: 700rpx;
+   
+}
+
+.footer text{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color: #aaaaaa;
+    font-size: 12px;
+}

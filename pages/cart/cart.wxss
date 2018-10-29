@@ -1,0 +1,31 @@
+/* pages/cart/cart.wxss */
+
+page {
+  height: 100%;
+}
+
+.cart-box {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.cart-box image {
+  width: 200rpx;
+  height: 200rpx;
+}
+
+.cart-emt {
+  color: #f55030;
+}
+
+button {
+  width: 300rpx;
+  color: #f55030;
+}
+
+button[type="default"] {
+  color: #f55030;
+}

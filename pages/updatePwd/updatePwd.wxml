@@ -1,0 +1,38 @@
+<!--pages/updatePwd/updatePwd.wxml-->
+<view class='container'>
+  <form bindsubmit="formSubmit">
+    <view class='top'>
+      <view class='one_list'>
+        <view class='change'>
+          <view class=''>旧密码：</view>
+          <view>
+            <input placeholder="请输入旧密码" maxlength='20' value='{{oldPwd}}' bindinput='oldPwdInput'></input>
+          </view>
+        </view>
+        <view class='x' bindtap="delOldPwd">✖</view>
+      </view>
+      <view class='x_line'></view>
+      <view class='one_list'>
+        <view class='change'>
+          <view class=''>新密码：</view>
+          <view>
+            <input placeholder="请输入新密码" maxlength='20' value='{{newPwd}}' bindinput='newPwdInput'></input>
+          </view>
+        </view>
+        <view class='x' bindtap="delNewPwd">✖</view>
+      </view>
+      <view class='x_line'></view>
+      <view class='one_list'>
+        <view class='change'>
+          <view class=''>确认密码：</view>
+          <view>
+            <input placeholder="请再次输入新密码" maxlength='20' value='{{reNewPwd}}' bindinput='reNewPwdInput'></input>
+          </view>
+        </view>
+        <view class='x' bindtap="delReNewPwd">✖</view>
+      </view>
+    </view>
+    <view class='errorMsg'>{{errorMsg}}</view>
+    <button class='btn' form-type='submit' size='mini' type='warn'>确定</button>
+  </form>
+</view>

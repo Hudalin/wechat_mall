@@ -1,0 +1,61 @@
+<!--pages/home/home.wxml-->
+<!--导航条-->
+<view class="navbar">
+  <text wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">{{item}}</text>
+</view>
+
+<!-- banner -->
+<swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+  <swiper-item wx:for="{{imgUrls}}" wx:key="imgUrl" wx:for-item="item" data-id="{{item.pid}}" bindtap="lookdetail">
+    <image src="{{item.imageUrl}}" />
+  </swiper-item>
+</swiper>
+
+  <view class="cutLine"></view>
+
+  <view class="hg_container" wx:if="{{newgoods != ''}}">
+    <text class="hg_title">新品推荐</text>
+    <view class="gooditem">
+      <view class='imgview' wx:key="index" wx:for="{{newgoods}}" wx:for-index="idx" wx:for-item="good" data-id="{{good.pid}}" bindtap="lookdetail">
+        <image class='productimg' src='{{good.imageUrl}}' />
+        <view>{{good.pname}}</view>
+        <text class="gray_font">￥{{good.price}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="placeholder"></view>
+
+  <view class='hg_container' wx:if="{{hotgoods != ''}}">
+    <text class="hg_title">超值购</text>
+    <view class='gooditem'>
+      <view class='imgview' wx:key="index" wx:for="{{hotgoods}}" wx:for-index="idx" wx:for-item="good" data-id="{{good.pid}}" bindtap="lookdetail">
+        <image class='productimg' src='{{good.imageUrl}}' />
+        <view>{{good.pname}}</view>
+        <text class="gray_font">￥{{good.price}}</text>
+      </view>
+    </view>
+  </view>
+  <view wx:if="{{newgoods == '' && hotgoods == ''}}">
+    <text class="hg_title">该分类暂无数据</text>
+  </view>
+
+  <view class="placeholder"></view>
+
+  <view class='hot-container'>
+    <view class="hot-title">更多精彩</view>
+    <view class='hot-gooditem'>
+      <view class='hot-imgview' wx:key="index" wx:for="{{moregoods}}" wx:for-index="idx" wx:for-item="good" data-id="{{good.pid}}" bindtap="lookdetail">
+        <image class='hot-product' src='{{good.imageUrl}}' />
+      </view>
+    </view>
+  </view>
+  
+<view class="footer" bindtap="tap">
+  <view>
+    <text>粤ICP备888888888号</text>
+    <text>htmlk.cn</text>
+    <text>XXX有限公司</text>
+    <text>广东省深圳市xxxxxx</text>
+  </view>
+</view>

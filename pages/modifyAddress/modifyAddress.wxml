@@ -1,0 +1,76 @@
+<!-- 信息部分开始 -->
+<form bindsubmit="formSubmit" report-submit="true">
+  <view class="info">
+    <!-- 姓名部分 -->
+    <view class="item">
+      <text>用户姓名</text>
+      <view class="right">
+        <input type="text" name="name" value="{{address.address_name}}" bindinput="changeName" data-detail="{{address.address_name}}" focus="{{focus}}" />
+      </view>
+    </view>
+
+    <!-- 电话部分 -->
+    <view class="item">
+      <text>联系电话</text>
+      <view class="right">
+        <input name="tel" type="number" value="{{address.address_phone}}" bindinput="changePhone" data-detail="{{address.address_phone}}" focus="{{focus}}" />
+      </view>
+    </view>
+
+    <!-- 收货地址部分 -->
+    <view class="item">
+      <text>所在区域</text>
+      <view class="right">
+        <view wx:if='{{address.address_province != null || chooseAddress}}'>
+          <view bindtap="translate">{{address.address_province}} {{address.address_city}} {{address.address_district}}</view>
+        </view>
+        <view wx:else>
+          <view bindtap="translate">点击我选择区域</view>
+        </view>
+      </view>
+    </view>
+
+    <!-- 详细地址部分 -->
+    <view class="item">
+      <text>详细地址</text>
+      <view class="right">
+        <input name="door" type="text" value="{{address.address_detail}}" bindinput="changeDetail" data-detail="{{address.address_detail}}" focus="{{focus}}" />
+      </view>
+    </view>
+  </view>
+
+  <!-- 信息部分结束 -->
+  <button class="save" formType="submit">保存</button>
+  <view wx:if="{{type == 'modify'}}">
+    <button class="delete" bindtap="delete">删除该地址</button>
+    <button class="delete" bindtap="cancel">取消</button>
+  </view>
+
+
+  <!-- 省市区三级联动 -->
+  <view class="animation-element-wrapper" animation="{{animation}}" style="visibility:{{show ? 'visible':'hidden'}}" bindtap="hiddenFloatView">
+    <view class="animation-element" catchtap="nono">
+      <picker-view indicator-style="height: 50rpx;" value="{{value}}" bindchange="bindChange" catchtap="nono">
+        <!--省-->
+        <picker-view-column>
+          <view wx:for="{{provinces}}" wx:for-item="item" wx:key="">
+            {{item.name}}
+          </view>
+        </picker-view-column>
+        <!--地级市-->
+        <picker-view-column>
+          <view wx:for="{{citys}}" wx:key="">
+            {{item.name}}
+          </view>
+        </picker-view-column>
+        <!--区县-->
+        <picker-view-column>
+          <view wx:for="{{countys}}" wx:key="">
+            {{item.name}}
+          </view>
+        </picker-view-column>
+      </picker-view>
+    </view>
+  </view>
+
+</form>

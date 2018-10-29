@@ -1,0 +1,54 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/cart/cart",
+    "pages/classify/classify",
+    "pages/mine/mine",
+    "pages/productInfo/productInfo",
+    "pages/updatePwd/updatePwd",
+    "pages/test/test",
+    "pages/order/order",
+    "pages/myAddress/myAddress",
+    "pages/modifyAddress/modifyAddress"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#f0145a",
+    "navigationBarTitleText": "JCG微商城",
+    "navigationBarTextStyle": "white",
+    "enablePullDownRefresh": false,
+    "backgroundColor": "#f0145a"
+  },
+  "tabBar": {
+    "color": "#858585",
+    "selectedColor": "#f0145a",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "#000",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "iconPath": "images/bottomNav/home.png",
+        "selectedIconPath": "images/bottomNav/home_select.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/classify/classify",
+        "iconPath": "images/bottomNav/classify.png",
+        "selectedIconPath": "images/bottomNav/classify_select.png",
+        "text": "分类"
+      },
+      {
+        "pagePath": "pages/cart/cart",
+        "iconPath": "images/bottomNav/cart.png",
+        "selectedIconPath": "images/bottomNav/cart_select.png",
+        "text": "购物车"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "iconPath": "images/bottomNav/mine.png",
+        "selectedIconPath": "images/bottomNav/mine_select.png",
+        "text": "我的"
+      }
+    ]
+  }
+}

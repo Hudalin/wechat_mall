@@ -1,0 +1,130 @@
+page {  
+  display: block;  
+  min-height: 100%;  
+  background-color:#f6f6f6;
+  font-family: "微软雅黑";
+  font-size: 30rpx;
+  color:#353535;
+  position: relative;
+} 
+.info{
+  background-color: #fff;
+}
+.item{
+  height:90rpx;
+  align-items: center;
+  display:flex;
+  margin-left:30rpx;
+  border-bottom:1rpx solid #eee;
+}
+
+input placeholder{
+  color:red;
+}
+.area{
+  width:150rpx;
+  border:1rpx solid #939393;
+}
+button{
+  width:92%;
+  margin-top:30rpx;
+}
+.remind{
+  padding-top: 6rpx;
+  color:#e64340;
+  font-size:20rpx;
+}
+.save{
+  background-color: #FFC800;
+  color:#fff;
+}
+.right{
+  padding-left: 150rpx;
+  width:75%;
+  display:flex;
+  margin-top:30rpx;
+}
+input{
+  width:100%;
+}
+
+
+
+
+
+
+/*.animation-button {
+  margin-top: 20rpx;
+  top: 20rpx;
+  width: 400rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  align-items: center;
+}*/
+
+.animation-element-wrapper {
+  display: flex;
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.animation-element {
+  display: flex;
+  position: fixed;
+  width: 100%;
+  height: 600rpx;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 1);
+}
+
+text {
+  color: #999;
+  display: inline-flex;
+  position: fixed;
+  margin-top: 20rpx;
+  height: 50rpx;
+  text-align: center;
+  line-height: 50rpx;
+  font-size: 34rpx;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.left-bt {
+  left: 30rpx;
+}
+
+.right-bt {
+  right: 30rpx;
+}
+
+.line {
+  display: block;
+  position: fixed;
+  height: 1rpx;
+  width: 100%;
+  margin-top: 89rpx;
+  background-color: #eee;
+}
+
+picker-view {
+  background-color: white;
+  padding: 0;
+  width: 100%;
+  height: 600rpx;
+  bottom: 0;
+  position: fixed;
+}
+
+picker-view-column view {
+  vertical-align: middle;
+  font-size: 28rpx;
+  line-height: 28rpx;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

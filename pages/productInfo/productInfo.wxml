@@ -1,0 +1,44 @@
+<!--pages/productInfo/productInfo.wxml-->
+<view class="detail-box">
+  <view class="detail-list">
+    <scroll-view scroll-y="true" style="height: 100%;">
+      <view>
+        <image class="product_show_img" src="{{detailgood.imageUrl}}"></image>
+      </view>
+      <view class="detail-name">
+        <ul>
+          <li>商品名称 ：{{detailgood.pname}}</li>
+          <li>价格 : {{detailgood.price}} 元</li>
+          <li>规格 : {{detailgood.productInfo.specification}}</li>
+          <li>产地 ：{{detailgood.productInfo.origin}} </li>
+          <li>发货地 : {{detailgood.productInfo.sendPlace}}</li>
+          <li>用户评价（31）</li>
+          <li>商品图文详情（建议在WIFI下查看）</li>
+          <li class="introduce">
+            <view class="product_detail" wx:for="{{detailgood.productInfo.productIntroduce}}" wx:key="index">
+              <image src='{{item.img}}'></image>
+            </view>
+          </li>
+        </ul>
+      </view>
+      <view class='hot-container'>
+        <view class="hot-title">热门推荐</view>
+        <view class='hot-gooditem'>
+          <view class='hot-imgview' wx:key="index" wx:for="{{hotgoods}}" wx:for-index="idx" wx:for-item="hot" data-id="{{hot.pid}}" bindtap="lookdetail">
+            <image class='hot-product' src='{{hot.imageUrl}}' />
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+  <view class="detail-footer">
+    <view class="detail-1"></view>
+    <view class="detail-2"></view>
+    <view class="detail-3" data-id="{{detailgood.pid}}" bindtap="addCart">
+      <text>加入购物车</text>
+    </view>
+    <view class="detail-4" data-id="{{detailgood.pid}}" bindtap="bugGoods">
+      <text>立即购买</text>
+    </view>
+  </view>
+</view>

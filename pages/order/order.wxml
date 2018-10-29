@@ -1,0 +1,50 @@
+<view class="top-nav">
+  <view class="top-nav-bar">
+    <view class="{{current == 0 ? 'active' : ''}}" catchtap="switchSlider" data-index="0">全部</view>
+    <view class="{{current == 1 ? 'active' : ''}}" catchtap="switchSlider" data-index="1">待付款</view>
+    <view class="{{current == 2 ? 'active' : ''}}" catchtap="switchSlider" data-index="2">待发货</view>
+    <view class="{{current == 3 ? 'active' : ''}}" catchtap="switchSlider" data-index="3">待收货</view>
+    <view class="{{current == 4 ? 'active' : ''}}" catchtap="switchSlider" data-index="4">待评价</view>
+  </view>
+</view>
+
+<view class="container" class="ma-top-190">
+  <view class="carts">
+    <view class="weui-pull">
+    <view wx:if="{{orderList != null && orderList.length != 0}}">
+        <view bindtap="toOrderDetail" class="orderDetails" wx:for="{{orderList}}" wx:key="item">
+          <view class="orderListTitle">
+            <view class="userImg">
+              <image src="{{userInfo.avatarUrl}}"></image>
+            </view>
+            <text class="userName">{{userInfo.nickName}}</text>
+            <text class="orderStatus" wx:if="{{item.status == 0}}">待付款</text>
+            <text class="orderStatus" wx:if="{{item.status == 1}}">待发货</text>
+            <text class="orderStatus" wx:if="{{item.status == 2}}">待收货</text>
+            <text class="orderStatus" wx:if="{{item.status == 3}}">待评价</text>
+            <text class="orderStatus" wx:if="{{item.status == 4}}">已评价</text>
+            <text class="orderStatus" wx:if="{{item.status == 5}}">交易已完成</text>
+          </view>
+          <view class="orderListDetails" wx:for="{{item.goodsList}}" wx:for-item="itemList" wx:key="itemList">
+            <view class="productImg">
+              <image src="{{itemList.goods_img}}"></image>
+            </view>
+            <view class="productInfo">
+              <view class="productTitle">{{itemList.goods_name}}</view>
+              <text class="productPrice">￥{{itemList.goods_price}}</text>
+              <text class="productQuantity">x{{itemList.goods_num}}</text>
+            </view>
+          </view>
+          <view class="productCount">
+            <view>合计：￥
+              <text>{{item.amount}}</text>
+            </view>
+          </view>
+        </view>
+    </view> 
+    <view wx:else>
+      无
+    </view>   
+    </view>
+  </view>
+</view>
